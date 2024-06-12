@@ -24,8 +24,10 @@ public class MinhaException extends RuntimeException{
                 tentativas++;
                 opcao = leitura(menu, tentativas);
             }
+            leitura.close();
             return opcao;
         }else{
+            leitura.close();
             throw new RuntimeException("NUMERO DE TENTATIVAS EXCEDIDO");
         }
     }
